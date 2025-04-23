@@ -1,0 +1,28 @@
+1.data prepare:
+data split to train and validation manually also including labels
+labeling work done by using CVAT (project-->task-->finish-->request-->...download)
+make sure data structure: (image suffix has to be .jpg)
+/content/data/
+├── train/
+│   ├── images/
+│   │   ├── img1.jpg
+│   │   ├── img2.jpg
+│   └── labels/
+│       ├── img1.txt
+│       ├── img2.txt
+├── validation/
+│   ├── images/
+│   │   ├── img101.jpg
+│   └── labels/
+│       ├── img101.txt
+
+
+The yaml file looks like:
+path: /content/custom_data/custom_data
+train: train/images
+val: validation/images
+nc: 3
+names:
+- birdnest
+- fire
+- snow
